@@ -76,6 +76,8 @@ function getWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemp = response.data.main.temp;
 }
 
 function searchCity(city) {
@@ -100,4 +102,26 @@ function getCity(event) {
 let submitButton = document.querySelector("#search-button");
 submitButton.addEventListener("click", getCity);
 
+function showfahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+function showcelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let fahrenheitLink = document.querySelector("#farenheit");
+fahrenheitLink.addEventListener("click", showfahrenheitTemp);
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showcelsiusTemp);
+
+let celsiusTemp = null;
 searchCity("Winnipeg");
