@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css" type="text/css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container whole" style=" background-image: url(images/background.jpg); ">
+
+        <form class="search-form" id="search-form">
+            <div class="row">
+                <div class="col-9">
+                    <input type="text" class="form-control" placeholder="Enter a city" id="city-text-input" />
+                </div>
+                <div class="col-3">
+                    <button type="submit" class="searchButton" id="search-button">
+                        search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+        <div class="container info">
+            <div class="row  city">
+                <div class=" col-6 weatherDetail">
+                    <p>CHANCE OF RAIN:10%</p>
+                    <p>HUMIDITY:<span id="humid"></span>%</p>
+                    <p>FEELS LIKE:<span id="feelsLike"> </span>ºC</p>
+                    <p id="sunrise">SUNRISE: 5:25 AM</p>
+                    <p id="sunset">SUNSET: 9:40 PM</p>
+                </div>
+                <div class="col-6 cityCapital" id="cityTitle">Winnipeg
+
+                </div><span class="country" id="country"></span>
+                <div class="date" id="nowDate">
+                    <br />Friday</br> July 1, 2021 <br />9:49
+                </div>
+            </div>
+
+            <div class="weatherNow">
+                <div class="row">
+                    <div class="col">
+                        <img src="" class="sunIcon" id="sunnyIcon" /><br /><br />
+                        <div class="highLow">
+                            <div>
+                                H:
+                                <span id="high"></span>
+                            </div>
+
+                            <div>
+                                L:
+                                <span id="low"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col weatherStat ">
+                        <div class="row">
+                            <span id="weatherStat" class="cityCapital"> </span><br /><br />
+                            <div class="col weatherDegree" id="temperature">
+
+                            </div>
+                            <span class="cf">
+                                <a href="#" id="celsius"> ºC</a> \<a href="#" id="farenheit">F</a>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
