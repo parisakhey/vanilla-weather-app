@@ -145,3 +145,8 @@
 #celsius {
   text-decoration: none;
 }
+.myCode {
+  text-align: center;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 13px;
+}
