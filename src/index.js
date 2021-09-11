@@ -41,6 +41,30 @@ let nowDate = document.querySelector("#nowDate");
 nowDate.innerHTML = `${toDay},</br>
  ${currentMonth} ${date}, ${year} </br>${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHtml = `<div class="row">`;
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+                <div class="col ">
+                    <div class="weather-forecast-date">${day}</div>
+                    <img src="images/cloudy.png" class="picCloudy" /><br />
+                    <div class="weather-forecast-temp"><span class="weather-forecast-temp-max">36º</span><span
+                            class="weather-forecast-min"> 22º</span></div>
+
+           
+
+            
+        </div>`;
+  });
+
+  forecastHtml = forecastHtml + `</div>`;
+  forecastElement.innerHTML = forecastHtml;
+}
+
 function getWeather(response) {
   let temp = document.querySelector("#temperature");
   let apiTemp = Math.round(response.data.main.temp);
@@ -124,4 +148,6 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showcelsiusTemp);
 
 let celsiusTemp = null;
+
 searchCity("Winnipeg");
+displayForecast();
