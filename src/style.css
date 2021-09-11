@@ -168,3 +168,8 @@
 .weather-forecast-min {
   opacity: 0.7;
 }
+.days {
+  width: 810px;
+  position: relative;
+  bottom: 136px;
+}
